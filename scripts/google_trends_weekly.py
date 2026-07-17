@@ -16,7 +16,11 @@ from pytrends.request import TrendReq
 
 KEYWORDS = ["Luna Ultra", "Insta360 Luna", "DJI Osmo Pocket 4", "Pocket 4"]
 GEOS = {"DE": "Germany", "IT": "Italy", "FR": "France", "ES": "Spain", "GB": "United Kingdom"}
-REQUEST_PAUSE_SECONDS = 2
+REQUEST_PAUSE_SECONDS = 20
+BROWSER_USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+)
 
 
 def last_full_week(today: date) -> tuple[date, date]:
@@ -64,7 +68,14 @@ def main() -> None:
     today = date.today()
     start, end = last_full_week(today)
 
-    pytrends = TrendReq(hl="en-US", tz=0, timeout=(10, 25), retries=3, backoff_factor=0.5)
+    pytrends = TrendReq(
+        hl="en-US",
+        tz=0,
+        timeout=(10, 25),
+        retries=5,
+        backoff_factor=5,
+        requests_args={"headers": {"User-Agent": BROWSER_USER_AGENT}},
+    )
 
     rows = []
     for geo in GEOS:
