@@ -16,8 +16,18 @@ _No data returned for this country/week._
 
 ## Spain (ES)
 
-_No data returned for this country/week._
+| Keyword | Avg weekly interest |
+|---|---|
+| Luna Ultra | 21.3 |
+| Insta360 Luna | 8.0 |
+| DJI Osmo Pocket 4 | 23.0 |
+| Pocket 4 | 66.3 |
 
 ## United Kingdom (GB)
 
-_No data returned for this country/week._
+| Keyword | Avg weekly interest |
+|---|---|
+| Luna Ultra | 17.6 |
+| Insta360 Luna | 10.4 |
+| DJI Osmo Pocket 4 | 37.1 |
+| Pocket 4 | 86.3 |
